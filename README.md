@@ -21,31 +21,30 @@ Create a text file. The first line must contains all anchor's names. Each of oth
 
 ## Create a commandline arguments for app
 
-* `DocxTemplatePath`: Absolute file path to *.DOCX template (with text anchors);
-* `OutputDirectory` : Absolute file path to output directory (where result docx files will be created);
-* `AnchorFilePath`: Absolute file path to table-file (one row represent one file, the column-values are the replaceable text for anchor's name in header-column);
-* `AnchorFileSeparator`: A string -- separator of columns in input table-file (by AnchorFilePath);
-* `NewFileName`: A name of createable DOCX file (default a file1, file2 ...). Use an anchor's name from AnchorFile to specify a need name from column; if file will exists with that name, it will be re-writed;
+```
+  -t, --DocxTemplatePath       Required. Absolute file path to *.DOCX template
+                               (with text anchors)
+  -o, --OutputDirectory        Required. Absolute file path to output directory
+                               (where result docx files will be created)
+  -a, --AnchorFilePath         Required. Absolute file path to table-file (one
+                               row represent one file, the column-values are the
+                               replaceable text for anchor's name in
+                               header-column)
+  -s, --AnchorFileSeparator    Required. A string -- separator of columns in
+                               input table-file (by AnchorFilePath)
+  -n, --NewFileName            A name of createable DOCX file (default a file1,
+                               file2 ...). Use an anchor's name from AnchorFile
+                               to specify a need name from column; if file will
+                               exists with that name, it will be re-writed
+  -r, --UseRelativePaths       A flag, if true -- DocxTemplatePath,
+                               OutputDirectory, AnchorFilePath are reads as
+                               relative paths from directory with execution
+                               assembly. If false (by default), all paths are
+                               absolute
+  --help                       Display this help screen.
+  --version                    Display version information.
+```
 
 ## Example of config and files
-
-The content of docx's template file:
-
-```txt
-Person's name in WORD_2. It living in WORD_3.
-```
-
-The content of AnchorFile:
-
-```txt
-WORD_1	WORD_2	WORD_3
-Doc 1	John Smitt	Berlin
-Doc 23	Kristofer Nollan	New York
-```
-
-The command for utility:
-```txt
-docxGenerator4DataCLI DocxTemplatePath "E:\\Downloads\\TemplateFile.docx" OutputDirectory "E:\\Downloads\\Output" AnchorFilePath "E:\\Downloads\\AnchorFile.csv" AnchorFileSeparator "	" NewFileName = "WORD_1"
-```
 
 Sample files and script you can find at `net8.0\Sample`.
