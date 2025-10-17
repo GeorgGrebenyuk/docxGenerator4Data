@@ -22,11 +22,11 @@ Create a text file. The first line must contains all anchor's names. Each of oth
 ## Create a commandline arguments for app
 
 ```
-  -t, --DocxTemplatePath       Required. Absolute file path to *.DOCX template
+  -t, --DocxTemplatePath       Required. Absolute or relative file path to *.DOCX template
                                (with text anchors)
-  -o, --OutputDirectory        Required. Absolute file path to output directory
+  -o, --OutputDirectory        Required. Absolute or relative file path to output directory
                                (where result docx files will be created)
-  -a, --AnchorFilePath         Required. Absolute file path to table-file (one
+  -a, --AnchorFilePath         Required. Absolute or relative file path to table-file (one
                                row represent one file, the column-values are the
                                replaceable text for anchor's name in
                                header-column)
@@ -44,6 +44,8 @@ Create a text file. The first line must contains all anchor's names. Each of oth
   --help                       Display this help screen.
   --version                    Display version information.
 ```
+
+It there are using relative paths, set the `--UseRelativePaths` to `true`.
 
 ## Example of config and files
 
